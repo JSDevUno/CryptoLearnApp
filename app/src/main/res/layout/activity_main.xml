@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraint"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="background"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/launcher" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="25dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/crypto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:fontFamily="@font/baloo_thambi"
+            android:outlineProvider="none"
+            android:text="Crypto"
+            android:textAlignment="center"
+            android:textColor="@color/gold"
+            android:textSize="55sp" />
+
+        <TextView
+            android:id="@+id/learn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:fontFamily="@font/baloo_thambi"
+            android:outlineProvider="none"
+            android:text="Learn"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="55sp" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="310dp"
+        android:layout_height="293dp"
+        android:layout_centerInParent="true"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/cryptolearnbg3" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gold"
+            android:text="Begin Your Crypto Journey"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:fontFamily="@font/baloo_thambi"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Crypto education shaping future!"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:fontFamily="@font/baloo_thambi"/>
+
+        <LinearLayout
+            android:id="@+id/proceedBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 %"
+                android:id="@+id/text_view"
+                android:textSize="25sp"
+                android:textColor="@color/gold"/>
+            <ProgressBar
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:id="@+id/progress_bar"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_marginBottom="15dp"
+                android:progressDrawable="@drawable/custom_progress_bar"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

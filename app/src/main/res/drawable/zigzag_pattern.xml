@@ -1,0 +1,20 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="100dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+
+    <!-- Reversed Zigzag Line Pattern -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FF00FFFF"
+        android:strokeWidth="2.5"
+        android:pathData="M0,50 L20,10 L40,90 L60,40 L80,80 L100,30 L120,70 L140,20 L160,60 L180,10 L200,50
+        L200,0 L0,0 Z" />
+
+    <!-- Fill the area above the reversed zigzag curve -->
+    <path
+        android:fillColor="#1E3A5F"
+        android:pathData="M0,50 L20,10 L40,90 L60,40 L80,80 L100,30 L120,70 L140,20 L160,60 L180,10 L200,50
+        L200,0 L0,0 Z" /> <!-- Closing the top part to fill -->
+</vector>

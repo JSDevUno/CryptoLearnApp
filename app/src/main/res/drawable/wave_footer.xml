@@ -1,0 +1,18 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="400dp"
+    android:height="60dp"
+    android:viewportWidth="400"
+    android:viewportHeight="100">
+
+    <!-- RSI-like Oscillating Line Pattern -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FF00FFFF"
+        android:strokeWidth="3.5"
+        android:pathData="M0,60 L20,40 L40,70 L60,30 L80,50 L100,30 L120,60 L140,20 L160,70 L180,40 L200,60 L220,30 L240,50 L260,20 L280,70 L300,40 L320,60 L340,30 L360,50 L380,20 L400,60" />
+
+        <!-- Closing the path at the bottom to fill the area under the curve -->
+    <path
+        android:fillColor="#1E3A5F"
+        android:pathData="M0,60 L20,40 L40,70 L60,30 L80,50 L100,30 L120,60 L140,20 L160,70 L180,40 L200,60 L220,30 L240,50 L260,20 L280,70 L300,40 L320,60 L340,30 L360,50 L380,20 L400,60 L400,100 L0,100 Z" />
+</vector>

@@ -1,0 +1,43 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+        <style name="Base.Theme.CryptoLearn" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/lavender</item>
+        <item name="colorPrimaryVariant">@color/lavender</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:fontFamily">@font/baloo_thambi</item>
+            <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Theme.CryptoLearn" parent="Base.Theme.CryptoLearn" />
+
+    <style name="customBot">
+        <item name="android:fontFamily">@font/righteous</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="customSide">
+        <item name="android:fontFamily">@font/righteous</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16.5sp</item>
+    </style>
+    <style name="roundedImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+    <style name="NavigationViewStyle">
+        <item name="android:listDivider">@drawable/custom_divider</item>
+    </style>
+    <style name="hint">
+        <item name="android:fontFamily">@font/baloo_thambi</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+</resources>
