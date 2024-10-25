@@ -156,7 +156,7 @@ class DetailsFragment : Fragment() {
                     "&hideideas=1" +        // Hide ideas
                     "&hide_legend=1" +      // Hide the legend
                     "&theme=Light" +
-                    "&style=8" +
+                    "&style=1" +
                     "&timezone=Etc%2FUTC" +
                     // Add RSI, two EMAs, MACD, and Pivot Points for support and resistance
                     "&studies=[\"RSI@tv-basicstudies\",\"EMA@tv-basicstudies\",\"EMA@tv-basicstudies\",\"MACD@tv-basicstudies\",\"PivotPointsHighLow@tv-basicstudies\"]" +
@@ -205,7 +205,7 @@ class DetailsFragment : Fragment() {
                     "&hideideas=1" +        // Hide ideas
                     "&hide_legend=1" +      // Hide the legend
                     "&theme=Light" +
-                    "&style=8" +
+                    "&style=1" +
                     "&timezone=Etc%2FUTC" +
                     // Add RSI, two EMAs, MACD, and Pivot Points for support and resistance
                     "&studies=[\"RSI@tv-basicstudies\",\"EMA@tv-basicstudies\",\"EMA@tv-basicstudies\",\"MACD@tv-basicstudies\",\"PivotPointsHighLow@tv-basicstudies\"]" +
