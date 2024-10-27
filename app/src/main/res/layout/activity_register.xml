@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/main2"
+    android:background="@color/card"
     tools:context=".register">
 
     <ImageView
@@ -38,9 +38,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Welcome!"
-            android:textColor="@color/white"
+            android:textColor="@color/btn"
+            android:textStyle="italic"
             android:textSize="34sp"
-            android:fontFamily="@font/montserrat_alternates_extrabold_italic"
+            android:fontFamily="@font/righteous"
             android:gravity="center" />
 
         <TextView
@@ -48,9 +49,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Register now and start your journey!"
-            android:textColor="@color/white"
+            android:textColor="@color/btn"
             android:textSize="20sp"
-            android:fontFamily="@font/baloo_thambi"
+            android:fontFamily="@font/righteous"
             android:gravity="center"
             android:layout_marginBottom="15dp" />
 
@@ -63,6 +64,7 @@
             android:drawableStart="@drawable/baseline_person_24"
             android:drawablePadding="5dp"
             android:padding="15dp"
+            android:fontFamily="@font/righteous"
             android:background="@drawable/edittext_background"
             android:textColorHint="#A9A9A9"
             android:layout_marginBottom="16dp" />
@@ -76,6 +78,7 @@
             android:drawableStart="@drawable/baseline_alternate_email_24"
             android:drawablePadding="5dp"
             android:padding="15dp"
+            android:fontFamily="@font/righteous"
             android:background="@drawable/edittext_background"
             android:textColorHint="#A9A9A9"
             android:layout_marginBottom="16dp" />
@@ -90,6 +93,7 @@
             android:padding="15dp"
             android:background="@drawable/edittext_background"
             android:textColorHint="#A9A9A9"
+            android:fontFamily="@font/righteous"
             android:layout_marginBottom="16dp" />
 
         <com.google.android.material.textfield.TextInputLayout
@@ -105,11 +109,11 @@
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/baseline_password_24"
                 android:drawablePadding="5dp"
-                android:fontFamily="@font/baloo_thambi"
                 android:background="@drawable/edittext_background"
                 android:hint="Password"
                 android:inputType="textPassword"
                 android:padding="15dp"
+                android:fontFamily="@font/righteous"
                 android:textColorHint="#A9A9A9" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -126,11 +130,11 @@
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/baseline_password_24"
                 android:drawablePadding="5dp"
-                android:fontFamily="@font/baloo_thambi"
                 android:background="@drawable/edittext_background"
                 android:hint="Confirm Password"
                 android:inputType="textPassword"
                 android:padding="15dp"
+                android:fontFamily="@font/righteous"
                 android:textColorHint="#A9A9A9" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -138,10 +142,10 @@
             android:id="@+id/signupBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/baloo_thambi"
             android:text="Sign up"
             android:textColor="@color/white"
             android:textSize="15sp"
+            android:fontFamily="@font/righteous"
             android:background="@drawable/button_bg"
             android:layout_marginBottom="8dp" />
 
@@ -157,7 +161,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Already have an account?"
-                android:textColor="@color/white"
+                android:textColor="@color/btn"
                 android:gravity="center" />
 
             <TextView
@@ -165,7 +169,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Login"
-                android:textColor="@color/lavender"
+                android:textColor="@color/btn"
                 android:gravity="center"
                 android:layout_marginStart="8dp"/>
         </LinearLayout>

@@ -20,9 +20,9 @@ class homeFragment : Fragment() {
 
     // Define lesson content for each category
     private val lessonsMap = mapOf(
-        "Introduction" to listOf("What is Cryptocurrency?", "How to Use Cryptocurrency", "Cryptocurrency Basics"),
-        "History" to listOf("The Birth of Bitcoin", "The Rise of Altcoins", "Evolution of Blockchain", "etc", "etc", "etc", "etc", "etc", "etc"),
-        "Blockchain Networks" to listOf("Ethereum Overview", "Smart Contracts", "Decentralized Applications")
+        "Introduction" to listOf("Lesson Name", "Lesson Name", "Lesson Name"),
+        "History" to listOf("Lesson Name", "Lesson Name", "Lesson Name", "Lesson Name", "Lesson Name", "Lesson Name", "Lesson Name", "Lesson Name", "Lesson Name"),
+        "Blockchain Networks" to listOf("Lesson Name", "Lesson Name", "Lesson Name")
     )
 
     override fun onCreateView(

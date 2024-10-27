@@ -1,6 +1,6 @@
 <!-- res/drawable/button_background.xml -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="@color/lavender" /> <!-- Change to your desired button color -->
+    <solid android:color="@color/btn" /> <!-- Change to your desired button color -->
     <corners android:radius="16dp" /> <!-- Adjust radius as needed -->
     <padding
         android:left="10dp"

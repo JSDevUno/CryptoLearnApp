@@ -87,7 +87,7 @@
                     android:id="@+id/learning_level"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Intermediate"
+                    android:text="Beginner"
                     android:background="@drawable/level"
                     android:textColor="@color/black"
                     android:paddingVertical="5dp"
