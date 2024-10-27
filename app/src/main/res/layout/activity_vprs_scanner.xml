@@ -62,7 +62,7 @@
                 android:layout_weight="1"
                 android:gravity="center">
 
-                <ImageView
+                <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/circle_view"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
@@ -70,8 +70,12 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="10dp"
                     android:layout_marginTop="15dp"
-                    android:background="@drawable/circle_background"
-                    android:scaleType="centerInside"
+                    app:strokeColor="@color/highlight"
+                    app:strokeWidth="10dp"
+                    android:padding="5dp"
+                    app:shapeAppearanceOverlay="@style/roundedImageView"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/vprs"
                     app:layout_constraintDimensionRatio="1:1"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"

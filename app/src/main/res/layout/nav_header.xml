@@ -3,17 +3,20 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="290dp"
+    android:layout_height="300dp"
     android:gravity="bottom"
     android:paddingLeft="40dp"
-    android:background="@drawable/headerbkg"
+    android:background="@drawable/header_side_nav"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/profilePic"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:scaleType="fitXY"
+        app:strokeColor="@color/highlight"
+        app:strokeWidth="5dp"
+        android:padding="5dp"
         app:shapeAppearanceOverlay="@style/roundedImageView"
         android:layout_marginRight="21dp"
         android:src="@drawable/dar"
@@ -26,9 +29,10 @@
         android:text="FullName"
         android:textColor="@color/white"
         android:textStyle="bold"
+        android:textSize="18sp"
         android:layout_marginRight="21dp"
         android:layout_marginTop="10dp"
-        android:fontFamily="@font/baloo_thambi"
+        android:fontFamily="@font/righteous"
         android:layout_gravity="center_horizontal" />
 
     <TextView
@@ -37,10 +41,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginRight="21dp"
-        android:layout_marginBottom="80dp"
-        android:fontFamily="@font/baloo_thambi"
-        android:text="Sugalero"
-        android:textColor="@color/lavender"
+        android:layout_marginBottom="85dp"
+        android:fontFamily="@font/righteous"
+        android:text="Investor"
+        android:textColor="@color/highlight"
         android:textSize="14sp" />
 
 </LinearLayout>

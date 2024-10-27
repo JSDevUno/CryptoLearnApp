@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="100"
+    android:viewportHeight="50">
+
+    <!-- Background color for the shape -->
+    <path
+        android:fillColor="@color/btn"
+        android:pathData="M0,0 H100 V40
+                         C90,35 60,45 50,40
+                         C40,35 10,45 0,40 Z"/>
+</vector>

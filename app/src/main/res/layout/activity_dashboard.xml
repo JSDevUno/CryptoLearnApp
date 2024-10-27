@@ -93,10 +93,10 @@
         app:itemTextAppearance="@style/customSide"
         app:menu="@menu/nav_menu"
         app:theme="@style/NavigationViewStyle"
-        android:background="@color/main2"
+        android:background="@drawable/sidenav_bg"
         app:itemBackground="@drawable/background"
-        app:itemIconTint="@color/lavender"
-        app:itemTextColor="@color/lavender"
+        app:itemIconTint="@color/btn"
+        app:itemTextColor="@color/black"
         app:itemVerticalPadding="15dp"
         app:itemIconPadding="20dp" />
 
