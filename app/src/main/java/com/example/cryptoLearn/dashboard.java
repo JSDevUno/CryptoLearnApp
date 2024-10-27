@@ -31,7 +31,6 @@ public class dashboard extends AppCompatActivity implements NavigationView.OnNav
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 if (item.getItemId() == R.id.item1) {
-                    Toast.makeText(dashboard.this, "Home", Toast.LENGTH_SHORT).show();
                     clearSideNav();
                     return true;
                 } else if (item.getItemId() == R.id.item2) {
