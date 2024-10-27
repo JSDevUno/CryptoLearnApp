@@ -92,6 +92,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0 %"
+                android:fontFamily="@font/righteous"
                 android:id="@+id/text_view"
                 android:textSize="25sp"
                 android:textColor="@color/btn"/>
