@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lessons_scroll"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:scrollbars="none"
     android:padding="16dp">
 
-    <!-- Header Section -->
-
     <LinearLayout
-        android:id="@+id/whole_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:background="@drawable/header_home">
+        android:orientation="vertical">
+
+        <!-- Header Section -->
         <LinearLayout
+            android:id="@+id/whole_header"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center"
-            android:layout_margin="15dp">
+            android:background="@drawable/header_home"
+            android:layout_marginBottom="10dp"
+            android:padding="20dp">
 
             <LinearLayout
-                android:id="@+id/header_section"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -42,7 +44,7 @@
                         android:fontFamily="@font/righteous"
                         android:textSize="20sp"
                         android:textStyle="bold"
-                        android:textColor="@color/black"/>
+                        android:textColor="@color/black" />
 
                     <TextView
                         android:id="@+id/greeting_subtext"
@@ -51,7 +53,7 @@
                         android:text="Let's make this day productive!"
                         android:textSize="14sp"
                         android:textStyle="bold"
-                        android:textColor="@color/black"/>
+                        android:textColor="@color/black" />
                 </LinearLayout>
 
                 <ImageView
@@ -61,7 +63,6 @@
                     android:src="@drawable/circle_background" />
             </LinearLayout>
 
-
             <!-- Learning Progress Section -->
             <LinearLayout
                 android:id="@+id/learning_progress_section"
@@ -69,8 +70,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
-                android:layout_marginTop="15dp"
-                android:layout_below="@id/header_section"
+                android:layout_marginTop="10dp"
                 android:layout_marginBottom="16dp">
 
                 <TextView
@@ -81,7 +81,7 @@
                     android:layout_weight="1"
                     android:textSize="18sp"
                     android:fontFamily="@font/righteous"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:id="@+id/learning_level"
@@ -91,138 +91,121 @@
                     android:background="@drawable/level"
                     android:textColor="@color/black"
                     android:paddingVertical="5dp"
-                    android:paddingHorizontal="10dp"/>
+                    android:textStyle="bold"
+                    android:paddingHorizontal="10dp" />
             </LinearLayout>
 
             <ProgressBar
+                android:id="@+id/user_progress_bar"
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
-                android:id="@+id/user_progress_bar"
                 android:progress="0"
                 style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                android:layout_marginBottom="15dp"
-                android:progressDrawable="@drawable/user_progress"/>
+                android:progressDrawable="@drawable/user_progress" />
         </LinearLayout>
 
-    </LinearLayout>
-
-
-    <!-- Categories Section -->
-    <LinearLayout
-        android:id="@+id/categories_label"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/whole_header"
-        android:layout_marginBottom="5dp"
-        android:layout_marginTop="25dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Categories"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:fontFamily="@font/righteous"
-            android:layout_weight="1"
-            android:textColor="@color/black"/>
-
+        <!-- Categories Section -->
         <LinearLayout
-            android:id="@+id/see_all"
-            android:layout_width="wrap_content"
+            android:id="@+id/categories_label"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="SEE ALL"
-                android:textSize="14sp"
-                android:textColor="@color/black"
-                android:layout_marginRight="5dp"/>
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/baseline_arrow_forward_ios_24"/>
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <HorizontalScrollView
-        android:id="@+id/categories_scroll"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/categories_label"
-        android:scrollbars="none">
-
-        <LinearLayout
-            android:id="@+id/category_names"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/category_intro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text="Introduction"
+                android:text="Categories"
+                android:textSize="20sp"
                 android:textStyle="bold"
-                android:textColor="@color/black"/>
+                android:fontFamily="@font/righteous"
+                android:layout_weight="1"
+                android:textColor="@color/black" />
 
-            <TextView
-                android:id="@+id/category_history"
+            <LinearLayout
+                android:id="@+id/see_all"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text="History"
-                android:textColor="@color/black"/>
-
-            <TextView
-                android:id="@+id/category_blockchain_net"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:text="Blockchain Networks"
-                android:textColor="@color/black"/>
-
-            <!-- Add more categories as needed -->
+                android:layout_gravity="center"
+                android:gravity="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SEE ALL"
+                    android:textSize="14sp"
+                    android:textColor="@color/black"
+                    android:layout_marginRight="5dp" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/baseline_arrow_forward_ios_24" />
+            </LinearLayout>
         </LinearLayout>
-    </HorizontalScrollView>
 
-    <!-- Lessons Section -->
-    <TextView
-        android:id="@+id/lessons_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Lessons"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:fontFamily="@font/righteous"
-        android:layout_below="@id/categories_scroll"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="14dp"
-        android:textColor="@color/black"/>
+        <!-- Categories Scroll -->
+        <HorizontalScrollView
+            android:id="@+id/categories_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
 
-    <ScrollView
-        android:id="@+id/lessons_scroll"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/lessons_label"
-        android:fillViewport="true"
-        android:scrollbars="none"
-        android:background="@drawable/vprs_bg"
-        android:padding="20dp">
+            <LinearLayout
+                android:id="@+id/category_names"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/category_intro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="Introduction"
+                    android:textStyle="bold"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/category_history"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="History"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/category_blockchain_net"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="Blockchain Networks"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <!-- Lessons Section -->
+        <TextView
+            android:id="@+id/lessons_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lessons"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/righteous"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/black" />
 
         <LinearLayout
             android:id="@+id/lesson_card_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
+            android:orientation="vertical"
+            android:background="@drawable/vprs_bg"
+            android:padding="12dp">
             <!-- This container will be updated dynamically -->
-
         </LinearLayout>
 
-    </ScrollView>
-</RelativeLayout>
+    </LinearLayout>
+</ScrollView>

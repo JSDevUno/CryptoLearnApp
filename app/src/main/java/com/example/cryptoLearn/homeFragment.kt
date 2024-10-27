@@ -99,9 +99,6 @@ class homeFragment : Fragment() {
             lessonCardContainer.addView(lessonTextView)
         }
     }
-
-
-    // Reset all categories to default style
     // Reset all categories to default style
     private fun resetCategoryStyles() {
         val defaultColor = ContextCompat.getColor(requireContext(), R.color.black)
