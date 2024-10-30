@@ -385,11 +385,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Done"
-                        android:textColor="@color/white"
-                        android:textSize="15sp"
+                        android:textColor="@color/btn"
+                        android:textSize="20sp"
+                        android:elevation="5dp"
                         android:textAllCaps="false"
                         android:fontFamily="@font/righteous"
-                        android:background="@drawable/button_bg" />
+                        android:background="@drawable/camera_btn" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

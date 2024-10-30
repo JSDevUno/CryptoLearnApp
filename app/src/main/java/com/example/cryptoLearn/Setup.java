@@ -2,10 +2,12 @@ package com.example.cryptoLearn;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.google.android.material.imageview.ShapeableImageView;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class Setup extends AppCompatActivity {
@@ -34,6 +36,15 @@ public class Setup extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 onBackPressed();
+            }
+        });
+        ShapeableImageView editProfilePic = findViewById(R.id.editProfilePic);
+
+        editProfilePic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Setup.this, Profile_Icon.class);
+                startActivity(intent);
             }
         });
 

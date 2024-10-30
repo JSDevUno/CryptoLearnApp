@@ -75,6 +75,7 @@
                         android:scaleType="fitXY"
                         android:src="#a9a9a9" />
                     <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/editProfilePic"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginTop="-57dp"
