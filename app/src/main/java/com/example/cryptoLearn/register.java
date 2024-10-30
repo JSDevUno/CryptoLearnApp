@@ -3,6 +3,7 @@ package com.example.cryptoLearn;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -37,6 +38,16 @@ public class register extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(register.this, login.class);
                 startActivity(intent);
+            }
+        });
+
+        Button signupBtn = findViewById(R.id.signupBtn);
+
+        signupBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent registerIntent = new Intent(register.this, Role.class);
+                startActivity(registerIntent);
             }
         });
     }
