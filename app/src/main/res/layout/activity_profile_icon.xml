@@ -97,7 +97,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:gravity="center"
-                    android:background="@drawable/profile_field"
+                    android:background="@drawable/icons_bg"
                     android:padding="20dp"
                     android:layout_marginTop="10dp">
 
@@ -133,8 +133,8 @@
                                     android:padding="5dp"
                                     android:src="#a9a9a9"
                                     app:shapeAppearanceOverlay="@style/roundedImageView"
-                                    app:strokeColor="@color/black"
-                                    app:strokeWidth="2dp"
+                                    app:strokeColor="@color/card"
+                                    app:strokeWidth="3dp"
                                     android:layout_gravity="center"/>
 
                                 <LinearLayout
@@ -157,7 +157,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="1000"
-                                        android:textColor="@color/black"
+                                        android:textColor="@color/white"
                                         android:textSize="14sp"/>
                                 </LinearLayout>
                             </LinearLayout>
@@ -177,8 +177,8 @@
                                     android:padding="5dp"
                                     android:src="#a9a9a9"
                                     app:shapeAppearanceOverlay="@style/roundedImageView"
-                                    app:strokeColor="@color/black"
-                                    app:strokeWidth="2dp"
+                                    app:strokeColor="@color/card"
+                                    app:strokeWidth="3dp"
                                     android:layout_gravity="center"/>
 
                                 <LinearLayout
@@ -201,7 +201,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="1000"
-                                        android:textColor="@color/black"
+                                        android:textColor="@color/white"
                                         android:textSize="14sp"/>
                                 </LinearLayout>
                             </LinearLayout>
@@ -219,8 +219,8 @@
                                     android:padding="5dp"
                                     android:src="#a9a9a9"
                                     app:shapeAppearanceOverlay="@style/roundedImageView"
-                                    app:strokeColor="@color/black"
-                                    app:strokeWidth="2dp"
+                                    app:strokeColor="@color/card"
+                                    app:strokeWidth="3dp"
                                     android:layout_gravity="center"/>
 
                                 <LinearLayout
@@ -243,7 +243,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="1000"
-                                        android:textColor="@color/black"
+                                        android:textColor="@color/white"
                                         android:textSize="14sp"/>
                                 </LinearLayout>
                             </LinearLayout>
@@ -261,8 +261,8 @@
                                     android:padding="5dp"
                                     android:src="#a9a9a9"
                                     app:shapeAppearanceOverlay="@style/roundedImageView"
-                                    app:strokeColor="@color/black"
-                                    app:strokeWidth="2dp"
+                                    app:strokeColor="@color/card"
+                                    app:strokeWidth="3dp"
                                     android:layout_gravity="center"/>
 
                                 <LinearLayout
@@ -285,7 +285,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="1000"
-                                        android:textColor="@color/black"
+                                        android:textColor="@color/white"
                                         android:textSize="14sp"/>
                                 </LinearLayout>
                             </LinearLayout>
@@ -303,8 +303,8 @@
                                     android:padding="5dp"
                                     android:src="#a9a9a9"
                                     app:shapeAppearanceOverlay="@style/roundedImageView"
-                                    app:strokeColor="@color/black"
-                                    app:strokeWidth="2dp"
+                                    app:strokeColor="@color/card"
+                                    app:strokeWidth="3dp"
                                     android:layout_gravity="center"/>
 
                                 <LinearLayout
@@ -327,7 +327,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="1000"
-                                        android:textColor="@color/black"
+                                        android:textColor="@color/white"
                                         android:textSize="14sp"/>
                                 </LinearLayout>
                             </LinearLayout>
@@ -345,8 +345,8 @@
                                     android:padding="5dp"
                                     android:src="#a9a9a9"
                                     app:shapeAppearanceOverlay="@style/roundedImageView"
-                                    app:strokeColor="@color/black"
-                                    app:strokeWidth="2dp"
+                                    app:strokeColor="@color/card"
+                                    app:strokeWidth="3dp"
                                     android:layout_gravity="center"/>
 
                                 <LinearLayout
@@ -369,7 +369,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="1000"
-                                        android:textColor="@color/black"
+                                        android:textColor="@color/white"
                                         android:textSize="14sp"/>
                                 </LinearLayout>
                             </LinearLayout>
