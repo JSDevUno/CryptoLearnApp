@@ -2,9 +2,14 @@ package com.example.cryptoLearn;
 
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.imageview.ShapeableImageView;
 
@@ -18,6 +23,8 @@ public class Profile_Icon extends AppCompatActivity {
         GridLayout gridLayout = findViewById(R.id.gridLayout);
         int itemCount = 6;
 
+        // Array of prices
+        Integer[] prices = {1000, 1500, 2000, 2500, 3000, 3500};
         // Array of drawable resource IDs
         /*int[] imageResources = {
                 R.drawable.image1, // replace with actual drawable names
@@ -48,6 +55,14 @@ public class Profile_Icon extends AppCompatActivity {
             imageView.setStrokeWidth(0); // Remove outline by setting stroke width to 0
             itemLayout.addView(imageView);
 
+            final int index = i; // Final variable to use inside click listener
+            imageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    showConfirmationDialog(index);
+                }
+            });
+
             // Create a LinearLayout to hold CL label and number
             LinearLayout textLayout = new LinearLayout(this);
             textLayout.setOrientation(LinearLayout.HORIZONTAL);
@@ -62,7 +77,7 @@ public class Profile_Icon extends AppCompatActivity {
 
             // Create TextView for "1000" text
             TextView numberText = new TextView(this);
-            numberText.setText("1000");
+            numberText.setText(String.valueOf(prices[i]));
             numberText.setTextColor(getResources().getColor(R.color.white));
             numberText.setTextSize(14); // Adjust font size
             textLayout.addView(numberText);
@@ -82,4 +97,37 @@ public class Profile_Icon extends AppCompatActivity {
             gridLayout.addView(itemLayout);
         }
     }
+    private void showConfirmationDialog(int index) {
+        // Inflate the custom layout for the dialog
+        LayoutInflater inflater = LayoutInflater.from(this);
+        View dialogView = inflater.inflate(R.layout.dialog_confirmation, null);
+
+        // Build the dialog
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setView(dialogView);
+
+        // Set up dialog buttons
+        AlertDialog dialog = builder.create();
+
+        Button cancelButton = dialogView.findViewById(R.id.cancelButton);
+        Button confirmButton = dialogView.findViewById(R.id.confirmButton);
+
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss(); // Dismiss dialog on cancel
+            }
+        });
+
+        confirmButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Action for confirm button
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+    }
+
 }
