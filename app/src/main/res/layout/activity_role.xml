@@ -70,7 +70,7 @@
         </LinearLayout>
 
         <!-- Proceed Button -->
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/proceedButton"
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -78,7 +78,7 @@
             android:textColor="#FFFFFF"
             android:textSize="15sp"
             android:fontFamily="@font/righteous"
-            android:backgroundTint="#000000"
+            android:background="@drawable/button_bg"
             android:layout_gravity="center" />
 
     </LinearLayout>
