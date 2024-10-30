@@ -1,21 +1,229 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".Setup">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="SETUP PROFILE"
-        android:textColor="@color/lavender"
-        android:textSize="30sp"
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent">
 
+        <!-- Inner Linear Layout that holds all content -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="16dp">
+
+            <!-- Back Icon -->
+            <ImageView
+                android:id="@+id/back_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:contentDescription="Back"
+                android:src="@drawable/baseline_arrow_back_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/profile_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/back_arrow">
+
+            <LinearLayout
+                android:id="@+id/profileSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="16dp"
+                android:layout_marginTop="20dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <!-- Profile Icon -->
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/circle_view"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_marginBottom="10dp"
+                        app:strokeColor="@color/btn"
+                        app:strokeWidth="10dp"
+                        android:padding="5dp"
+                        app:shapeAppearanceOverlay="@style/roundedImageView"
+                        android:scaleType="fitXY"
+                        android:src="#a9a9a9" />
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="-57dp"
+                        app:strokeColor="@color/btn"
+                        android:padding="5dp"
+                        app:strokeWidth="3dp"
+                        android:layout_gravity="end"
+                        android:layout_marginRight="0dp"
+                        android:background="@color/bg"
+                        android:scaleType="centerInside"
+                        app:shapeAppearanceOverlay="@style/roundedImageView"
+                        android:src="@drawable/baseline_edit_24"/>
+                </LinearLayout>
+
+                <!-- Username below Profile Icon -->
+                <TextView
+                    android:id="@+id/usernameText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Username"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/righteous"
+                    android:textColor="#000000"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+
+            <!-- Input Fields Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/profile_field"
+                android:padding="20dp"
+                android:layout_marginTop="10dp">
+
+                <!-- Full Name Field -->
+                <EditText
+                    android:id="@+id/fullnameReg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Full Name"
+                    android:inputType="textPersonName"
+                    android:drawableStart="@drawable/baseline_person_24"
+                    android:drawablePadding="5dp"
+                    android:padding="15dp"
+                    android:fontFamily="@font/righteous"
+                    android:background="@drawable/edittext_background"
+                    android:textColorHint="#A9A9A9"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Email Field -->
+                <EditText
+                    android:id="@+id/emailReg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
+                    android:drawableStart="@drawable/baseline_alternate_email_24"
+                    android:drawablePadding="5dp"
+                    android:padding="15dp"
+                    android:fontFamily="@font/righteous"
+                    android:background="@drawable/edittext_background"
+                    android:textColorHint="#A9A9A9"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Username Field -->
+                <EditText
+                    android:id="@+id/usernameReg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Username"
+                    android:inputType="textEmailAddress"
+                    android:drawableStart="@drawable/baseline_drive_file_rename_outline_24"
+                    android:drawablePadding="5dp"
+                    android:padding="15dp"
+                    android:background="@drawable/edittext_background"
+                    android:textColorHint="#A9A9A9"
+                    android:fontFamily="@font/righteous"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Password Field with Eye Icon -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:passwordToggleEnabled="true"
+                    android:layout_marginBottom="16dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/passwordReg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/baseline_password_24"
+                        android:drawablePadding="5dp"
+                        android:background="@drawable/edittext_background"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:padding="15dp"
+                        android:fontFamily="@font/righteous"
+                        android:textColorHint="#A9A9A9" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Confirm Password Field with Eye Icon -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:passwordToggleEnabled="true"
+                    android:layout_marginBottom="24dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/confirmpasswordReg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/baseline_password_24"
+                        android:drawablePadding="5dp"
+                        android:background="@drawable/edittext_background"
+                        android:hint="Confirm Password"
+                        android:inputType="textPassword"
+                        android:padding="15dp"
+                        android:fontFamily="@font/righteous"
+                        android:textColorHint="#A9A9A9" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Save and Delete Buttons -->
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/saveBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Save"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/righteous"
+                    android:background="@drawable/button_bg"
+                    android:layout_marginBottom="8dp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/deleteAccBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Delete Account"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/righteous"
+                    android:background="@drawable/button_bg" />
+            </LinearLayout>
+        </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
