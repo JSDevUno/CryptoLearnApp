@@ -14,23 +14,27 @@
         android:orientation="horizontal"
         android:gravity="center"
         android:padding="5dp">
-        <ImageView
+        <TextView
             android:id="@+id/coin_icon"
             android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/baseline_currency_bitcoin_24"
+            android:layout_height="match_parent"
+            android:text="CL"
+            android:fontFamily="@font/righteous"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:textColor="@color/highlight"
             android:layout_marginEnd="3dp"
             android:layout_gravity="center"/>
 
         <TextView
             android:id="@+id/toolbar_text"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:fontFamily="@font/righteous"
             android:text="0000"
             android:textColor="@color/btn"
             android:textSize="18sp"
-            android:layout_marginBottom="1dp"
             android:layout_gravity="center"/>
     </LinearLayout>
 
