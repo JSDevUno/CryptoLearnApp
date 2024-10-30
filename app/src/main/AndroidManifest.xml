@@ -16,6 +16,9 @@
         android:theme="@style/Theme.CryptoLearn"
         tools:targetApi="31">
         <activity
+            android:name=".Role"
+            android:exported="false" />
+        <activity
             android:name=".Search_Coin"
             android:exported="false" />
         <activity
