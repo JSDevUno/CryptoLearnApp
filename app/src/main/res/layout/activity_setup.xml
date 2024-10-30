@@ -114,7 +114,7 @@
 
                 <!-- Full Name Field -->
                 <EditText
-                    android:id="@+id/fullnameReg"
+                    android:id="@+id/editfullnameReg"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Full Name"
@@ -129,7 +129,7 @@
 
                 <!-- Email Field -->
                 <EditText
-                    android:id="@+id/emailReg"
+                    android:id="@+id/editemailReg"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Email"
@@ -144,7 +144,7 @@
 
                 <!-- Username Field -->
                 <EditText
-                    android:id="@+id/usernameReg"
+                    android:id="@+id/editusernameReg"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Username"
@@ -165,7 +165,7 @@
                     android:layout_marginBottom="16dp">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/passwordReg"
+                        android:id="@+id/editpasswordReg"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawableStart="@drawable/baseline_password_24"
@@ -186,7 +186,7 @@
                     android:layout_marginBottom="24dp">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/confirmpasswordReg"
+                        android:id="@+id/editconfirmpasswordReg"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawableStart="@drawable/baseline_password_24"
