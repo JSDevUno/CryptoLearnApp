@@ -41,7 +41,7 @@
                         android:id="@+id/greeting_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Hi, John"
+                        android:text="Hi, Name"
                         android:fontFamily="@font/righteous"
                         android:textSize="20sp"
                         android:textStyle="bold"

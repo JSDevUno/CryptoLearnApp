@@ -19,7 +19,7 @@
         android:padding="5dp"
         app:shapeAppearanceOverlay="@style/roundedImageView"
         android:layout_marginRight="21dp"
-        android:src="@drawable/dar"
+        android:src="#a9a9a9"
         android:layout_gravity="center_horizontal"/>
 
     <TextView
