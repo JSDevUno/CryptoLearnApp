@@ -13,7 +13,8 @@
         android:layout_height="match_parent"
         android:orientation="horizontal"
         android:gravity="center"
-        android:padding="5dp">
+        android:padding="5dp"
+        android:layout_marginBottom="1dp">
         <TextView
             android:id="@+id/coin_icon"
             android:layout_width="24dp"
@@ -33,6 +34,7 @@
             android:layout_height="match_parent"
             android:fontFamily="@font/righteous"
             android:text="0000"
+            android:inputType="number"
             android:textColor="@color/btn"
             android:textSize="18sp"
             android:layout_gravity="center"/>

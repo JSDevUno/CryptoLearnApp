@@ -10,7 +10,7 @@
             <solid android:color="@color/bg"/>
             <corners android:radius="50dp"/>
             <stroke android:width="3dp"/>
-            <stroke android:color="@color/card"/>
+            <stroke android:color="@color/highlight"/>
         </shape>
     </item>
 </layer-list>
