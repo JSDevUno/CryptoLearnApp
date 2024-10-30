@@ -86,7 +86,7 @@
                         android:background="@color/bg"
                         android:scaleType="centerInside"
                         app:shapeAppearanceOverlay="@style/roundedImageView"
-                        android:src="@drawable/baseline_edit_24"/>
+                        android:src="@drawable/baseline_camera_alt_24"/>
                 </LinearLayout>
 
                 <!-- Username below Profile Icon -->
