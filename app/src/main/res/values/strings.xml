@@ -4,4 +4,19 @@
     <string name="close_nav">Close Navigation Drawer</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="about_text">
+    Welcome to CryptoLearn — your gateway to mastering the fundamentals of cryptocurrency!&lt;br/&gt;&lt;br/&gt;
+
+    In today’s digital age, cryptocurrencies like Bitcoin and Ethereum are transforming the world of finance. Despite this innovation, many people struggle to understand these concepts due to a lack of accessible, interactive educational resources. CryptoLearn is here to change that. Our mission is to provide a safe, engaging, and comprehensive learning platform that empowers individuals to explore the world of cryptocurrency without the need to risk real money.&lt;br/&gt;&lt;br/&gt;
+
+    CryptoLearn brings together structured lessons, interactive quizzes, and practical simulations to create an immersive learning experience. From understanding decentralized finance (DeFi) to exploring wallet management and tokenomics, users can engage with these topics in a controlled, simulated environment designed for learning, not for trading. Whether you’re just starting out or looking to deepen your understanding, CryptoLearn offers the tools to establish a solid foundation in cryptocurrency.&lt;br/&gt;&lt;br/&gt;
+
+    One of CryptoLearn’s standout features is its &lt;b&gt;Visual Pattern Recognition System (VPRS)&lt;/b&gt;. This educational tool allows users to study price charts and recognize basic chart patterns, helping them understand market trends in a risk-free setting. By integrating image processing algorithms, the VPRS breaks down complex concepts like bullish and bearish signals and key support and resistance levels. This feature makes learning interactive and intuitive, enabling users to explore fundamental technical analysis without the pressure of real-world trading. Designed to instill confidence and foundational knowledge, the VPRS is an ideal resource for anyone looking to gain a deeper understanding of market dynamics in cryptocurrency.&lt;br/&gt;&lt;br/&gt;
+
+    At its core, CryptoLearn is more than just an app; it’s a community-oriented platform dedicated to fostering financial literacy and technological understanding in the digital economy. Our goal is to create a supportive learning environment where users can freely explore, ask questions, and become informed participants in the cryptoverse. By demystifying cryptocurrency, CryptoLearn aims to cultivate a community of knowledgeable enthusiasts and inspire informed decision-making.&lt;br/&gt;&lt;br/&gt;
+
+    Join us on a journey of discovery, knowledge, and growth with CryptoLearn. Whether you’re curious about the future of digital finance, aspiring to be an investor, or simply eager to understand the potential of cryptocurrency, CryptoLearn provides the educational foundation and resources you need to thrive in the evolving world of digital finance.
+</string>
+
 </resources>
