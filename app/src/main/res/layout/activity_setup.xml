@@ -159,6 +159,7 @@
 
                 <!-- Password Field with Eye Icon -->
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:passwordToggleEnabled="true"
@@ -180,6 +181,7 @@
 
                 <!-- Confirm Password Field with Eye Icon -->
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayoutConfirmPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:passwordToggleEnabled="true"
