@@ -14,6 +14,7 @@ public class CategoryRepository {
         add("History");
         add("Blockchain Networks");
         add("Advanced Topics");
+        add("Other Topics");
     }};
 
     private final Map<String, List<String>> lessonsMap = new HashMap<String, List<String>>() {{
@@ -21,6 +22,7 @@ public class CategoryRepository {
         put("History", List.of("Lesson 1", "Lesson 2", "Lesson 3", "Lesson 4"));
         put("Blockchain Networks", List.of("Lesson 1", "Lesson 2"));
         put("Advanced Topics", List.of("Lesson 1", "Lesson 2", "Lesson 3", "Lesson 4", "Lesson 5"));
+        put("Other Topics", List.of("Lesson 1", "Lesson 2", "Lesson 3", "Lesson 4", "Lesson 5"));
     }};
 
     private CategoryRepository() {}

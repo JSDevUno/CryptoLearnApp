@@ -65,7 +65,7 @@ public class Categories extends AppCompatActivity {
                     LinearLayout.LayoutParams.MATCH_PARENT,
                     300
             ));
-            imageView.setPadding(15, 15, 15, 15);
+            imageView.setPadding(30, 30, 30, 30);
             imageView.setScaleType(ShapeableImageView.ScaleType.FIT_XY);
             imageView.setStrokeWidth(3);
             imageView.setStrokeColor(ColorStateList.valueOf(ContextCompat.getColor(this, R.color.highlight)));
@@ -84,7 +84,7 @@ public class Categories extends AppCompatActivity {
             titleText.setTextColor(ContextCompat.getColor(this, R.color.card));
             titleText.setTextSize(18);
             titleText.setGravity(Gravity.CENTER);
-            titleText.setPadding(15, 15, 15, 15);
+            titleText.setPadding(15, 15, 15, 0);
             titleText.setTypeface(ResourcesCompat.getFont(this, R.font.righteous));
 
             // TextView for dynamic category name
@@ -92,7 +92,7 @@ public class Categories extends AppCompatActivity {
             categoryTitle.setText(category);
             categoryTitle.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
             categoryTitle.setTextColor(ContextCompat.getColor(this, R.color.white));
-            categoryTitle.setPadding(15, 15, 15, 15);
+            categoryTitle.setPadding(15, 15, 15, 30);
 
             // Add components to the card layout
             cardLayout.addView(imageView);
