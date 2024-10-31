@@ -79,7 +79,7 @@ public class homeFragment extends Fragment {
         resetCategoryStyles();
         highlightSelectedCategory(category);
 
-        List<String> lessons = repository.getLessons(category);
+        List<CategoryRepository.Lesson> lessons = repository.getLessons(category);
 
         int marginTop8dp = getResources().getDimensionPixelSize(R.dimen.margin_top_8dp);
         Typeface righteousFont = ResourcesCompat.getFont(requireContext(), R.font.righteous);
@@ -87,9 +87,11 @@ public class homeFragment extends Fragment {
         if (lessons != null) {
             for (int index = 0; index < lessons.size(); index++) {
                 TextView lessonTextView = new TextView(requireContext());
-                lessonTextView.setText(lessons.get(index));
+                lessonTextView.setText(lessons.get(index).getTitle());
                 lessonTextView.setPadding(40, 40, 40, 40);
                 lessonTextView.setBackgroundResource(R.drawable.lesson_cards);
+                lessonTextView.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.check_outline, 0);
+                lessonTextView.setCompoundDrawablePadding(8);
                 lessonTextView.setTextSize(17f);
                 lessonTextView.setTextColor(ContextCompat.getColor(requireContext(), R.color.black));
                 lessonTextView.setTypeface(righteousFont);
