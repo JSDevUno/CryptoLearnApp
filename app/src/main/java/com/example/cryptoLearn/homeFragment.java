@@ -1,7 +1,10 @@
 package com.example.cryptoLearn;
 
+import android.content.Intent;
+import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,85 +17,83 @@ import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import android.graphics.Paint;
+import com.example.cryptoLearn.education.Categories;
+import com.example.cryptoLearn.education.CategoryRepository;
 
+import java.util.List;
 
 public class homeFragment extends Fragment {
 
     private LinearLayout lessonCardContainer;
-    private TextView categoryIntro;
-    private TextView categoryHistory;
-    private TextView categoryBlockchainNet;
-
-    // Define lesson content for each category
-    private final Map<String, List<String>> lessonsMap = new HashMap<String, List<String>>() {{
-        put("Introduction", Arrays.asList("Lesson Name", "Lesson Name", "Lesson Name"));
-        put("History", Arrays.asList("Lesson Name", "Lesson Name", "Lesson Name", "Lesson Name", "Lesson Name", "Lesson Name", "Lesson Name", "Lesson Name", "Lesson Name"));
-        put("Blockchain Networks", Arrays.asList("Lesson Name", "Lesson Name", "Lesson Name"));
-    }};
+    private LinearLayout categoryNamesContainer;
+    private CategoryRepository repository;
+    private LinearLayout seeAllLayout;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        // Find views
         lessonCardContainer = view.findViewById(R.id.lesson_card_container);
-        categoryIntro = view.findViewById(R.id.category_intro);
-        categoryHistory = view.findViewById(R.id.category_history);
-        categoryBlockchainNet = view.findViewById(R.id.category_blockchain_net);
+        categoryNamesContainer = view.findViewById(R.id.category_names);
+        seeAllLayout = view.findViewById(R.id.see_all);
+        repository = CategoryRepository.getInstance();
 
-        // Set click listeners for each category
-        categoryIntro.setOnClickListener(v -> updateLessons("Introduction", categoryIntro));
-        categoryHistory.setOnClickListener(v -> updateLessons("History", categoryHistory));
-        categoryBlockchainNet.setOnClickListener(v -> updateLessons("Blockchain Networks", categoryBlockchainNet));
+        loadCategories();
 
-        updateLessons("Introduction", categoryIntro);
+        // Display lessons for the first category by default if categories are available
+        List<String> categoriesList = repository.getCategories();
+        if (!categoriesList.isEmpty()) {
+            updateLessons(categoriesList.get(0));
+        }
 
+        seeAllLayout.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), Categories.class);
+            startActivity(intent);
+        });
         return view;
     }
 
-    // Update the lesson section based on the selected category and style the selected category
-    private void updateLessons(String category, TextView selectedCategoryTextView) {
-        // Clear previous lessons
+    private void loadCategories() {
+        List<String> categoriesList = repository.getCategories();
+        for (String category : categoriesList) {
+            TextView categoryTextView = new TextView(requireContext());
+            categoryTextView.setText(category);
+            categoryTextView.setPadding(16, 8, 16, 8);
+            categoryTextView.setTextColor(ContextCompat.getColor(requireContext(), R.color.black));
+            categoryTextView.setTextSize(16);
+            categoryTextView.setTypeface(ResourcesCompat.getFont(requireContext(), R.font.righteous));
+            categoryTextView.setGravity(Gravity.CENTER);
+            categoryTextView.setClickable(true);
+
+            // Add click listener to update lessons
+            categoryTextView.setOnClickListener(v -> updateLessons(category));
+
+            // Add to the category container
+            categoryNamesContainer.addView(categoryTextView);
+        }
+    }
+
+    private void updateLessons(String category) {
         lessonCardContainer.removeAllViews();
-
-        // Reset all categories to default style
         resetCategoryStyles();
+        highlightSelectedCategory(category);
 
-        // Style the selected category
-        selectedCategoryTextView.setTypeface(selectedCategoryTextView.getTypeface(), Typeface.BOLD_ITALIC);
-        selectedCategoryTextView.setPaintFlags(selectedCategoryTextView.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
-        selectedCategoryTextView.setTextColor(ContextCompat.getColor(requireContext(), R.color.black));
+        List<String> lessons = repository.getLessons(category);
 
-        // Get lessons for the selected category
-        List<String> lessons = lessonsMap.get(category);
-
-        // Convert 8dp to pixels
         int marginTop8dp = getResources().getDimensionPixelSize(R.dimen.margin_top_8dp);
-
-        // Load the "Righteous" font from resources
         Typeface righteousFont = ResourcesCompat.getFont(requireContext(), R.font.righteous);
 
-        // Add each lesson as a TextView in the lesson container
         if (lessons != null) {
             for (int index = 0; index < lessons.size(); index++) {
-                String lesson = lessons.get(index);
                 TextView lessonTextView = new TextView(requireContext());
-                lessonTextView.setText(lesson);
+                lessonTextView.setText(lessons.get(index));
                 lessonTextView.setPadding(40, 40, 40, 40);
                 lessonTextView.setBackgroundResource(R.drawable.lesson_cards);
-                lessonTextView.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.check_outline, 0);
-                lessonTextView.setCompoundDrawablePadding(8);
                 lessonTextView.setTextSize(17f);
                 lessonTextView.setTextColor(ContextCompat.getColor(requireContext(), R.color.black));
-                lessonTextView.setTypeface(righteousFont); // Apply the Righteous font
+                lessonTextView.setTypeface(righteousFont);
 
-                // Set top margin of 8dp for all items except the first one
                 LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
                         LinearLayout.LayoutParams.MATCH_PARENT,
                         LinearLayout.LayoutParams.WRAP_CONTENT
@@ -102,24 +103,31 @@ public class homeFragment extends Fragment {
                 }
                 lessonTextView.setLayoutParams(layoutParams);
 
-                // Add the TextView to the container
                 lessonCardContainer.addView(lessonTextView);
             }
         }
     }
 
-    // Reset all categories to default style
     private void resetCategoryStyles() {
         int defaultColor = ContextCompat.getColor(requireContext(), R.color.black);
-
-        TextView[] categoryTextViews = {categoryIntro, categoryHistory, categoryBlockchainNet};
-
-        // Reset each category TextView to default styling
-        for (TextView textView : categoryTextViews) {
-            textView.setTypeface(Typeface.DEFAULT); // Set to default typeface (normal, no bold or italic)
+        for (int i = 0; i < categoryNamesContainer.getChildCount(); i++) {
+            TextView textView = (TextView) categoryNamesContainer.getChildAt(i);
+            textView.setTypeface(Typeface.DEFAULT);
             textView.setPaintFlags(textView.getPaintFlags() & ~Paint.UNDERLINE_TEXT_FLAG);
             textView.setTextColor(defaultColor);
-            textView.invalidate();  // Force refresh to apply styling immediately
+        }
+    }
+
+    private void highlightSelectedCategory(String category) {
+        int highlightColor = ContextCompat.getColor(requireContext(), R.color.highlight);
+        for (int i = 0; i < categoryNamesContainer.getChildCount(); i++) {
+            TextView textView = (TextView) categoryNamesContainer.getChildAt(i);
+            if (textView.getText().toString().equals(category)) {
+                textView.setTypeface(textView.getTypeface(), Typeface.BOLD_ITALIC);
+                textView.setPaintFlags(textView.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+                textView.setTextColor(highlightColor);
+                break;
+            }
         }
     }
 }
