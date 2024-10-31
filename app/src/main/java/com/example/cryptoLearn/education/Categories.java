@@ -1,5 +1,6 @@
 package com.example.cryptoLearn.education;
 
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -107,6 +108,13 @@ public class Categories extends AppCompatActivity {
             cardLayout.addView(imageView);
             cardLayout.addView(titleText);
             cardLayout.addView(categoryTitle);
+
+            // Add click listener to open Lessons activity with the selected category
+            cardLayout.setOnClickListener(v -> {
+                Intent intent = new Intent(Categories.this, Lessons.class);
+                intent.putExtra("category", category);
+                startActivity(intent);
+            });
 
             // Add card layout to GridLayout
             gridLayout.addView(cardLayout);
