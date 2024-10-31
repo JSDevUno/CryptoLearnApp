@@ -161,6 +161,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Already have an account?"
+                android:fontFamily="@font/righteous"
                 android:textColor="@color/btn"
                 android:gravity="center" />
 
@@ -169,6 +170,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Login"
+                android:fontFamily="@font/righteous"
                 android:textColor="@color/btn"
                 android:gravity="center"
                 android:layout_marginStart="8dp"/>
