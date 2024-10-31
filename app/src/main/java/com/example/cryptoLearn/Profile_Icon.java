@@ -98,7 +98,7 @@ public class Profile_Icon extends AppCompatActivity {
             GridLayout.LayoutParams params = new GridLayout.LayoutParams();
             params.width = GridLayout.LayoutParams.WRAP_CONTENT;
             params.height = GridLayout.LayoutParams.WRAP_CONTENT;
-            params.setMargins(30, 20, 30, 20); // Set spacing between items
+            params.setMargins(90, 20, 90, 20); // Set spacing between items
             params.setGravity(Gravity.CENTER);
             itemLayout.setLayoutParams(params);
 
