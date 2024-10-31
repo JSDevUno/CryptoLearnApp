@@ -12,7 +12,10 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
 import com.google.android.material.imageview.ShapeableImageView;
+import com.google.android.material.shape.ShapeAppearanceModel;
 
 public class Profile_Icon extends AppCompatActivity {
 
@@ -59,9 +62,16 @@ public class Profile_Icon extends AppCompatActivity {
             LinearLayout.LayoutParams imageParams = new LinearLayout.LayoutParams(200, 200);
             imageParams.setMargins(0, 0, 0, 16); // Add bottom margin
             imageView.setLayoutParams(imageParams);
-            imageView.setPadding(0, 0, 0, 0);
+            imageView.setPadding(8, 8, 8, 8);
             imageView.setImageResource(R.drawable.circle_background); // Set each image from array -> imageResources[i]
-            imageView.setStrokeWidth(0); // Remove outline by setting stroke width to 0
+            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            imageView.setShapeAppearanceModel(
+                    ShapeAppearanceModel.builder()
+                            .setAllCornerSizes(ShapeAppearanceModel.PILL) // Makes it circular
+                            .build()
+            );
+            imageView.setStrokeColor(ContextCompat.getColorStateList(this, R.color.highlight));
+            imageView.setStrokeWidth(15f);
             itemLayout.addView(imageView);
 
             final int index = i; // Final variable to use inside click listener

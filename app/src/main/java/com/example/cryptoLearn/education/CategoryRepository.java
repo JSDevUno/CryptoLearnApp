@@ -1,5 +1,7 @@
 package com.example.cryptoLearn.education;
 
+import com.example.cryptoLearn.R;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -21,40 +23,38 @@ public class CategoryRepository {
     // Map for storing lessons with descriptions
     private final Map<String, List<Lesson>> lessonsMap = new HashMap<String, List<Lesson>>() {{
         put("Introduction", List.of(
-                new Lesson("IntroLessonTitle 1", "IntroLessonDecription1"),
-                new Lesson("IntroLessonTitle 2", "IntroLessonDecription2"),
-                new Lesson("IntroLessonTitle 3", "IntroLessonDecription3")
+                new Lesson("IntroLessonTitle 1", "IntroLessonDecription1",  R.drawable.coins),
+                new Lesson("IntroLessonTitle 2", "IntroLessonDecription2",  R.drawable.circle_background),
+                new Lesson("IntroLessonTitle 3", "IntroLessonDecription3",  R.drawable.circle_background)
         ));
         put("History", List.of(
-                new Lesson("HistoryLessonTitle 1", "HistoryLessonDecription1"),
-                new Lesson("HistoryLessonTitle 2", "HistoryLessonDecription2"),
-                new Lesson("HistoryLessonTitle 3", "HistoryLessonDecription3"),
-                new Lesson("HistoryLessonTitle 4", "HistoryLessonDecription4")
+                new Lesson("HistoryLessonTitle 1", "HistoryLessonDecription1",  R.drawable.circle_background),
+                new Lesson("HistoryLessonTitle 2", "HistoryLessonDecription2",  R.drawable.circle_background),
+                new Lesson("HistoryLessonTitle 3", "HistoryLessonDecription3",  R.drawable.circle_background),
+                new Lesson("HistoryLessonTitle 4", "HistoryLessonDecription4",  R.drawable.circle_background)
         ));
         put("Blockchain Networks", List.of(
-                new Lesson("BlockchainLessonTitle 1", "BlockchainLessonDecription1"),
-                new Lesson("BlockchainLessonTitle 2", "BlockchainLessonDecription2")
+                new Lesson("BlockchainLessonTitle 1", "BlockchainLessonDecription1",  R.drawable.circle_background),
+                new Lesson("BlockchainLessonTitle 2", "BlockchainLessonDecription2",  R.drawable.circle_background)
         ));
         put("Advanced Topics", List.of(
-                new Lesson("AdvancedLessonTitle 1", "AdvancedLessonDecription1"),
-                new Lesson("AdvancedLessonTitle 2", "AdvancedLessonDecription2"),
-                new Lesson("AdvancedLessonTitle 3", "AdvancedLessonDecription3"),
-                new Lesson("AdvancedLessonTitle 4", "AdvancedLessonDecription4"),
-                new Lesson("AdvancedLessonTitle 5", "AdvancedLessonDecription5")
+                new Lesson("AdvancedLessonTitle 1", "AdvancedLessonDecription1",  R.drawable.circle_background),
+                new Lesson("AdvancedLessonTitle 2", "AdvancedLessonDecription2",  R.drawable.circle_background),
+                new Lesson("AdvancedLessonTitle 3", "AdvancedLessonDecription3",  R.drawable.circle_background),
+                new Lesson("AdvancedLessonTitle 4", "AdvancedLessonDecription4",  R.drawable.circle_background),
+                new Lesson("AdvancedLessonTitle 5", "AdvancedLessonDecription5",  R.drawable.circle_background)
         ));
         put("Other Topics", List.of(
-                new Lesson("OtherLessonTitle 1", "OtherLessonDecription1"),
-                new Lesson("OtherLessonTitle 2", "OtherLessonDecription2"),
-                new Lesson("OtherLessonTitle 3", "OtherLessonDecription3"),
-                new Lesson("OtherLessonTitle 4", "OtherLessonDecription4"),
-                new Lesson("OtherLessonTitle 5", "OtherLessonDecription5")
+                new Lesson("OtherLessonTitle 1", "OtherLessonDecription1",  R.drawable.circle_background),
+                new Lesson("OtherLessonTitle 2", "OtherLessonDecription2",  R.drawable.circle_background),
+                new Lesson("OtherLessonTitle 3", "OtherLessonDecription3",  R.drawable.circle_background),
+                new Lesson("OtherLessonTitle 4", "OtherLessonDecription4",  R.drawable.circle_background),
+                new Lesson("OtherLessonTitle 5", "OtherLessonDecription5",  R.drawable.circle_background)
         ));
         put("Another Topics", List.of(
-                new Lesson("AnotherLessonTitle 1", "AnotherLessonDecription1"),
-                new Lesson("AnotherLessonTitle 2", "AnotherLessonDecription2"),
-                new Lesson("AnotherLessonTitle 3", "AnotherLessonDecription3"),
-                new Lesson("AnotherLessonTitle 4", "AnotherLessonDecription4"),
-                new Lesson("AnotherLessonTitle 5", "AnotherLessonDecription5")
+                new Lesson("AnotherLessonTitle 1", "AnotherLessonDecription1",  R.drawable.circle_background),
+                new Lesson("AnotherLessonTitle 2", "AnotherLessonDecription2",  R.drawable.circle_background),
+                new Lesson("AnotherLessonTitle 3", "AnotherLessonDecription3",  R.drawable.circle_background)
         ));
     }};
 
@@ -84,10 +84,12 @@ public class CategoryRepository {
     public static class Lesson {
         private final String title;
         private final String description;
+        private final int imageResourceId; // Add an image resource field
 
-        public Lesson(String title, String description) {
+        public Lesson(String title, String description, int imageResourceId) {
             this.title = title;
             this.description = description;
+            this.imageResourceId = imageResourceId;
         }
 
         public String getTitle() {
@@ -96,6 +98,9 @@ public class CategoryRepository {
 
         public String getDescription() {
             return description;
+        }
+        public int getImageResourceId() {
+            return imageResourceId;
         }
     }
 }

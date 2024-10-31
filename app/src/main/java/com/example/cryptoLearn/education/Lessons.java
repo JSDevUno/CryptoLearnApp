@@ -2,6 +2,9 @@ package com.example.cryptoLearn.education;
 
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -11,6 +14,7 @@ import androidx.core.content.res.ResourcesCompat;
 
 import com.example.cryptoLearn.R;
 import com.google.android.material.imageview.ShapeableImageView;
+import com.google.android.material.shape.ShapeAppearanceModel;
 
 import java.util.List;
 
@@ -22,6 +26,14 @@ public class Lessons extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lessons);
+        ImageView backArrow = findViewById(R.id.back_arrow);
+        backArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
 
         lessonsContainer = findViewById(R.id.lessons_container);
 
@@ -48,12 +60,14 @@ public class Lessons extends AppCompatActivity {
             // Create the main card layout
             LinearLayout lessonCard = new LinearLayout(this);
             lessonCard.setOrientation(LinearLayout.VERTICAL);
-            lessonCard.setPadding(16, 16, 16, 16);
-            lessonCard.setBackground(ContextCompat.getDrawable(this, R.drawable.header_home));
-            lessonCard.setLayoutParams(new LinearLayout.LayoutParams(
+            lessonCard.setPadding(50, 50, 50, 50);
+            lessonCard.setBackground(ContextCompat.getDrawable(this, R.drawable.lesson_bg));
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.MATCH_PARENT,
                     LinearLayout.LayoutParams.WRAP_CONTENT
-            ));
+            );
+            layoutParams.setMargins(16, 16, 16, 24); // Bottom margin
+            lessonCard.setLayoutParams(layoutParams);
             lessonCard.setBackgroundTintList(ContextCompat.getColorStateList(this, R.color.card));
             lessonCard.setElevation(4);
 
@@ -76,15 +90,24 @@ public class Lessons extends AppCompatActivity {
             // Horizontal layout for icon and description
             LinearLayout horizontalLayout = new LinearLayout(this);
             horizontalLayout.setOrientation(LinearLayout.HORIZONTAL);
+            horizontalLayout.setGravity(Gravity.CENTER_VERTICAL);
             horizontalLayout.setPadding(0, 10, 0, 0);
 
             // ShapeableImageView for the lesson icon
             ShapeableImageView icon = new ShapeableImageView(this);
-            icon.setLayoutParams(new LinearLayout.LayoutParams(60, 60));
-            icon.setPadding(5, 5, 5, 5);
-            icon.setStrokeWidth(3);
+            icon.setLayoutParams(new LinearLayout.LayoutParams(150, 150));
+            icon.setPadding(0, 0, 0, 0);
             icon.setStrokeColor(ContextCompat.getColorStateList(this, R.color.btn));
-            icon.setImageResource(R.drawable.circle_background);
+            icon.setImageResource(lesson.getImageResourceId());
+            icon.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            icon.setPadding(8,8,8,8);
+            icon.setShapeAppearanceModel(
+                    ShapeAppearanceModel.builder()
+                            .setAllCornerSizes(ShapeAppearanceModel.PILL) // Makes it circular
+                            .build()
+            );
+            icon.setStrokeColor(ContextCompat.getColorStateList(this, R.color.btn));
+            icon.setStrokeWidth(15f);
             horizontalLayout.addView(icon);
 
             // Description TextView
@@ -93,7 +116,8 @@ public class Lessons extends AppCompatActivity {
             description.setTextSize(15);
             description.setTextColor(ContextCompat.getColor(this, R.color.black));
             description.setTypeface(righteousFont);
-            description.setPadding(16, 0, 0, 0);
+            description.setGravity(Gravity.CENTER);
+            description.setPadding(30, 0, 0, 0);
             horizontalLayout.addView(description);
 
             // Add horizontal layout to the card
@@ -102,5 +126,10 @@ public class Lessons extends AppCompatActivity {
             // Add the card to the main container
             lessonsContainer.addView(lessonCard);
         }
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
     }
 }
