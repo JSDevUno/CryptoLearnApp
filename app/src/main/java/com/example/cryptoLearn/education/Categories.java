@@ -72,7 +72,7 @@ public class Categories extends AppCompatActivity {
             ShapeableImageView imageView = new ShapeableImageView(this);
             imageView.setLayoutParams(new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.MATCH_PARENT,
-                    300
+                    350
             ));
             imageView.setPadding(30, 30, 30, 30);
             imageView.setScaleType(ShapeableImageView.ScaleType.FIT_XY);
