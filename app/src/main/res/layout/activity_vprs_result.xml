@@ -175,7 +175,7 @@
                         android:fontFamily="@font/righteous"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="Score based on support, resistance, and trend"
+                        android:text="Score based on support, resistance, and pattern"
                         android:textColor="@android:color/black"
                         android:textSize="13sp" />
 
@@ -186,9 +186,10 @@
 
                         <ImageView
                             android:id="@+id/sentiment_result"
-                            android:layout_width="200dp"
-                            android:layout_height="200dp"
-                            android:layout_margin="10dp"
+                            android:layout_width="230dp"
+                            android:layout_height="230dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="20dp"
                             android:background="@drawable/sentiment_bg"
                             android:scaleType="centerInside"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -203,17 +204,34 @@
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            android:gravity="center">
+                            android:gravity="center"
+                            android:orientation="vertical">
                             <TextView
-                                android:id="@+id/sentiment_indicator"
+                                android:id="@+id/pattern_name"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:elevation="5dp"
                                 android:fontFamily="@font/righteous"
                                 android:gravity="center"
+                                android:padding="6dp"
+                                android:text="Pattern_Name"
+                                android:textColor="@android:color/black"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                            <TextView
+                                android:id="@+id/sentiment_indicator"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/righteous"
+                                android:gravity="center"
                                 android:padding="10dp"
-                                android:text="Score"
+                                android:text="Sentiment"
+                                android:background="@drawable/camera_btn"
                                 android:textColor="@android:color/black"
                                 android:textSize="16sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
