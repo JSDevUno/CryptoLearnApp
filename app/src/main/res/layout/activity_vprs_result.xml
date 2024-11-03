@@ -216,9 +216,9 @@
                         android:fontFamily="@font/righteous"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="Score based on support, resistance, and patterns"
+                        android:text="Whole chart overall score based on support, resistance, and patterns"
                         android:textColor="@android:color/black"
-                        android:textSize="13sp" />
+                        android:textSize="16sp" />
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
