@@ -1,34 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     android:background="@android:color/white">
 
-    <LinearLayout
+    <!-- Scrollable content -->
+    <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:layout_above="@id/takeQuiz"> <!-- Keeps ScrollView above the button -->
 
-        <!-- Back arrow at the top -->
-        <ImageView
-            android:id="@+id/back_arrow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:contentDescription="Back"
-            android:src="@drawable/baseline_arrow_back_24" />
-
-        <!-- Container for lesson cards -->
         <LinearLayout
-            android:id="@+id/lessons_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:divider="?android:attr/dividerVertical"
-            android:dividerPadding="8dp"
-            android:paddingTop="16dp"
-            android:paddingBottom="16dp"/>
+            android:orientation="vertical">
 
-    </LinearLayout>
-</ScrollView>
+            <!-- Back arrow at the top -->
+            <ImageView
+                android:id="@+id/back_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:contentDescription="Back"
+                android:src="@drawable/baseline_arrow_back_24" />
+
+            <!-- Container for lesson cards -->
+            <LinearLayout
+                android:id="@+id/lessons_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:divider="?android:attr/dividerVertical"
+                android:dividerPadding="8dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Sticky Floating Button -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/takeQuiz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/header_home"
+        android:fontFamily="@font/righteous"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="12dp"
+        android:text="Take Quiz"
+        android:textColor="@color/btn"
+        android:textSize="16sp" />
+
+</RelativeLayout>

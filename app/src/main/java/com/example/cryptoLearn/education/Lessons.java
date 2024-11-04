@@ -1,9 +1,11 @@
 package com.example.cryptoLearn.education;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -21,12 +23,22 @@ import java.util.List;
 public class Lessons extends AppCompatActivity {
 
     private LinearLayout lessonsContainer;
+    private String selectedCategory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lessons);
         ImageView backArrow = findViewById(R.id.back_arrow);
+
+        selectedCategory = getIntent().getStringExtra("category");
+
+        Button takeQuizButton = findViewById(R.id.takeQuiz);
+        takeQuizButton.setOnClickListener(v -> {
+            Intent intent = new Intent(Lessons.this, Quiz.class);
+            intent.putExtra("category", selectedCategory); // Pass the selected category
+            startActivity(intent);
+        });
         backArrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

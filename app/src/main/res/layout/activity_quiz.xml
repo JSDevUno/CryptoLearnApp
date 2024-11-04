@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/btn"
-    tools:context=".MainActivity">
+    tools:context=".education.Quiz">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -51,125 +51,78 @@
             android:layout_width="match_parent"
             android:layout_height="8dp"
             android:layout_below="@id/header"
-            android:progress="32"
+            android:progress="0"
             android:max="100"
             android:progressTint="#9b51e0"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="8dp"/>
 
-        <!-- Main Card Layout for Question -->
         <LinearLayout
-            android:id="@+id/question_card"
+            android:id="@+id/quizContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/progress_bar"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/quiz_bg"
-            android:gravity="center_horizontal"
-            android:orientation="vertical"
-            android:padding="24dp">
-
-            <!-- Question Number -->
-            <TextView
-                android:id="@+id/question_number"
-                android:layout_width="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/question_card"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="8dp"
-                android:text="1/25"
-                android:fontFamily="@font/righteous"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp" />
-
-            <!-- Question Text -->
-            <TextView
-                android:id="@+id/question_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:gravity="center"
-                android:paddingHorizontal="16dp"
-                android:textAlignment="textStart"
-                android:fontFamily="@font/righteous"
-                android:text="Spider-Man is the best Disney's superhero show so far as it ______ you forget about the rest of the Marvel Universe."
-                android:textColor="#FFFFFF"
-                android:textSize="16sp" />
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/quiz_bg"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <!-- Question Number -->
+                <TextView
+                    android:id="@+id/question_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:text="1/25"
+                    android:fontFamily="@font/righteous"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
+
+                <!-- Question Text -->
+                <TextView
+                    android:id="@+id/question_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center"
+                    android:paddingHorizontal="16dp"
+                    android:textAlignment="textStart"
+                    android:fontFamily="@font/righteous"
+                    android:text="question goes here"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <!-- Answer Options -->
+            <GridLayout
+                android:id="@+id/answer_options"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/question_card"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                android:columnCount="2"
+                android:rowCount="2"
+                android:gravity="center">
+
+            </GridLayout>
         </LinearLayout>
-
-        <!-- Answer Options -->
-        <GridLayout
-            android:id="@+id/answer_options"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/question_card"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="16dp"
-            android:columnCount="2"
-            android:rowCount="2"
-            android:gravity="center">
-
-            <!-- Option 1 -->
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/option1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:text="Makes"
-                android:textColor="@color/btn"
-                android:fontFamily="@font/righteous"
-                android:background="@drawable/camera_btn"
-                android:layout_margin="8dp" />
-
-            <!-- Option 2 -->
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/option2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:text="Forces"
-                android:textColor="@color/btn"
-                android:fontFamily="@font/righteous"
-                android:background="@drawable/camera_btn"
-                android:layout_margin="8dp" />
-
-            <!-- Option 3 -->
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/option3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:text="Obliges"
-                android:textColor="@color/btn"
-                android:fontFamily="@font/righteous"
-                android:background="@drawable/camera_btn"
-                android:layout_margin="8dp" />
-
-            <!-- Option 4 -->
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/option4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:text="Go"
-                android:textColor="@color/btn"
-                android:fontFamily="@font/righteous"
-                android:background="@drawable/camera_btn"
-                android:layout_margin="8dp" />
-        </GridLayout>
-
-        <!-- Next Question Button -->
+        <!-- Main Card Layout for Question -->
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/next_question_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/answer_options"
+            android:layout_below="@id/quizContainer"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
@@ -181,5 +134,6 @@
             android:fontFamily="@font/righteous"
             android:background="@drawable/camera_btn"
             android:textSize="16sp" />
+
     </RelativeLayout>
 </ScrollView>

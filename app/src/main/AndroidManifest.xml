@@ -16,6 +16,9 @@
         android:theme="@style/Theme.CryptoLearn"
         tools:targetApi="31">
         <activity
+            android:name=".education.LessonContent"
+            android:exported="false" />
+        <activity
             android:name=".education.Quiz"
             android:exported="false" />
         <activity
