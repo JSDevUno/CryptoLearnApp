@@ -57,14 +57,23 @@ public class Quiz extends AppCompatActivity {
         }
 
         nextQuestionButton.setOnClickListener(v -> {
-            currentQuestionIndex++;
-            if (currentQuestionIndex < questions.size()) {
-                loadQuestion(currentQuestionIndex);
+            // Check if it's the last question
+            if (currentQuestionIndex == questions.size() - 1) {
+                nextQuestionButton.setText("SEE RESULT"); // Set button text to "SEE RESULT" on the last question
+                finish(); // End the activity or navigate to a results screen if needed
             } else {
-                Toast.makeText(this, "Quiz completed!", Toast.LENGTH_SHORT).show();
-                finish();
+                currentQuestionIndex++;
+                loadQuestion(currentQuestionIndex);
+
+                // Check if the next question is the last one to update button text accordingly
+                if (currentQuestionIndex == questions.size() - 1) {
+                    nextQuestionButton.setText("SEE RESULT");
+                } else {
+                    nextQuestionButton.setText("Next Question"); // Reset to default text
+                }
             }
         });
+
     }
 
     private void loadQuestion(int index) {
